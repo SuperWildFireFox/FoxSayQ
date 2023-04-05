@@ -1,0 +1,7 @@
+{
+  "use_proxy":true,
+  "openai_api":"https://api.openai.com/v1/chat/completions",
+  "model_name":"gpt-3.5-turbo",
+  "api_key":"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",
+  "temperature":1
+}

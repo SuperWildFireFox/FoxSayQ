@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Mirai.Net.Sessions.Http.Managers;
 
-namespace FoxSayQ
+namespace FoxSayQ.functions
 {
   public class Echo
   { 

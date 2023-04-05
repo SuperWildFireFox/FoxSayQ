@@ -1,0 +1,14 @@
+{
+  "robot_setting":{
+    "mirai_address":"localhost:8080",
+    "robot_qq_num":"3221734968",
+    "mirai_vertify":"9he&jdsofguw34"
+  },
+  "mysql_setting":{
+
+  },
+  "proxy_setting":{
+    "http_proxy":"http://127.0.0.1:7890",
+    "https_proxy":"http://127.0.0.1:7890"
+  }
+}
