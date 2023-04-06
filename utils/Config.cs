@@ -28,6 +28,7 @@ namespace FoxSayQ.utils
       public String mirai_address;
       public String robot_qq_num;
       public String mirai_vertify;
+      public String manager_qq_num;
     }
 
     public class MysqlConfig

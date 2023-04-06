@@ -2,7 +2,8 @@
   "robot_setting":{
     "mirai_address":"localhost:8080",
     "robot_qq_num":"3221734968",
-    "mirai_vertify":"9he&jdsofguw34"
+    "mirai_vertify":"9he&jdsofguw34",
+    "manager_qq_num":"1096602433"
   },
   "mysql_setting":{
 

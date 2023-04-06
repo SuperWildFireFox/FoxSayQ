@@ -2,27 +2,26 @@ using FoxSayQ.functions;
 using Mirai.Net.Data.Messages.Receivers;
 using Mirai.Net.Sessions.Http.Managers;
 
-namespace FoxSayQ
+namespace FoxSayQ.handlers
 {
-  public class HandleMessage
+  public class GroupMessageHandler
   {
     //机器人自身的QQ号
     public readonly string ROBOT_QQ_NUM;
 
-    public HandleMessage(String qq_num){
+    public GroupMessageHandler(String qq_num){
       this.ROBOT_QQ_NUM = qq_num;
     }
 
 
-
-    public void HandleGroupMessage(GroupMessageReceiver x)
+    public void Handle(GroupMessageReceiver x)
     {
       var msg = x.MessageChain.GetPlainMessage();
       Console.WriteLine($"收到了来自群{x.GroupId}由{x.Sender.Name}[{x.Sender.Id}]发送的消息：{msg}");
-      Task.Run(() => HandleGroupMessageAnysc(x, msg));
+      Task.Run(() => HandleAnysc(x, msg));
     }
 
-    private async Task HandleGroupMessageAnysc(GroupMessageReceiver x, string msg)
+    private async Task HandleAnysc(GroupMessageReceiver x, string msg)
     {
       //前缀消息处理器
       if(msg.StartsWith("ai")){
@@ -62,7 +61,7 @@ namespace FoxSayQ
           await MessageManager.SendGroupMessageAsync(x.GroupId, status_message);
           return;
         }
-        else if(msg.StartsWith("设置预设")){
+        if(msg.StartsWith("设置预设")){
           string prompt = msg.Substring("设置预设".Length).Trim();
           if(chat.SetPrompt(prompt)){
             await MessageManager.SendGroupMessageAsync(x.GroupId, "新预设设置成功");

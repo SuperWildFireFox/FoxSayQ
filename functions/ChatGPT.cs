@@ -280,6 +280,7 @@ namespace FoxSayQ.functions
     }
     public void ClearMemory(){
       history_message.Clear();
+      status_used_token = 0;
     }
   }
 }
